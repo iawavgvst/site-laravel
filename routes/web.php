@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,14 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'Main'], function () {
-    Route::get('/index.html', [IndexController::class, '__invoke'])->name('index');
+    Route::get('/index.html', [MainController::class, '__invoke'])->name('index');
 });
-
-Auth::routes();
 
 Route::get('/post.html', [PostController::class, '__invoke'])->name('posts.index');
 Route::get('/about.html', [AboutController::class, '__invoke'])->name('about.index');
 Route::get('/contact.html', [ContactController::class, '__invoke'])->name('contact.index');
+Route::get('/faq.html', [FaqController::class, '__invoke'])->name('faq.index');
 
 Auth::routes();
 
@@ -34,6 +34,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::group(['namespace' => 'Post'], function () {
-        Route::get('/post', [PostController::class, '__invoke'])->name('admin.post.index');
+        Route::get('/posts', [PostController::class, '__invoke'])->name('admin.post.index');
     });
+});
+
+Route::group(['namespace' => 'Post'], function () {
+
 });
