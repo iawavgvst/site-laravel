@@ -23,7 +23,7 @@ Route::group(['namespace' => 'Main'], function () {
     Route::get('/index.html', [MainController::class, '__invoke'])->name('index');
 });
 
-Route::get('/post.html', [PostController::class, '__invoke'])->name('posts.index');
+Route::get('/post.html', [PostController::class, '__invoke'])->name('post.index');
 Route::get('/about.html', [AboutController::class, '__invoke'])->name('about.index');
 Route::get('/contact.html', [ContactController::class, '__invoke'])->name('contact.index');
 Route::get('/faq.html', [FaqController::class, '__invoke'])->name('faq.index');
