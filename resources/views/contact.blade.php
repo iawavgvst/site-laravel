@@ -2,13 +2,12 @@
 
 @section('content')
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+    <header class="masthead" style="background-image: url('assets/img/background.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>Let Me Know</h1>
-                        <span class="subheading">To Dispel All Doubts</span>
+                        <h1>To Get In Touch</h1>
                     </div>
                 </div>
             </div>
@@ -19,8 +18,10 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <p>I am happy to know that you have something to ask or tell me. </p>
-                    <p>Please fill out the form below to send me a message and I will definitely contact you as soon as possible!</p>
+                    <p>Dear Reader,</p>
+                    <p>I am happy to know that you have something to ask or tell me.</p>
+                    <p>Please fill out the form below to send me a message and I will definitely contact you as soon as possible.</p>
+                    <p>Have a good day!</p>
                     <div class="my-5">
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->

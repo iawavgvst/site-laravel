@@ -2,13 +2,12 @@
 
 @section('content')
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/faq-bg.jpg')">
+    <header class="masthead" style="background-image: url('assets/img/background.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>FAQ</h1>
-                        <span class="subheading">Special To You</span>
+                        <h1>To Dispel All Doubts</h1>
                     </div>
                 </div>
             </div>
@@ -19,68 +18,23 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <p>This section is created specifically so that you can get the information you are interested in a short time.</p>
-                    <p>Use it with pleasure!</p>
-                    <div class="my-5">
-{{--                    <div class="container px-4 px-lg-5">--}}
-{{--                        <div class="row gx-4 gx-lg-5 justify-content-center">--}}
-{{--                            <div class="col-md-10 col-lg-8 col-xl-7">--}}
-                                <!-- Post preview-->
-                                <div class="post-preview">
-                                    <a href="post.html">
-                                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                                        <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                                    </a>
-                                    <p class="post-meta">
-                                        Posted by
-                                        <a href="#!">Start Bootstrap</a>
-                                        on September 24, 2023
-                                    </p>
-                                </div>
-                                <!-- Divider-->
-                                <hr class="my-4" />
-                                <!-- Post preview-->
-                                <div class="post-preview">
-                                    <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
-                                    <p class="post-meta">
-                                        Posted by
-                                        <a href="#!">Start Bootstrap</a>
-                                        on September 18, 2023
-                                    </p>
-                                </div>
-                                <!-- Divider-->
-                                <hr class="my-4" />
-                                <!-- Post preview-->
-                                <div class="post-preview">
-                                    <a href="post.html">
-                                        <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                                        <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
-                                    </a>
-                                    <p class="post-meta">
-                                        Posted by
-                                        <a href="#!">Start Bootstrap</a>
-                                        on August 24, 2023
-                                    </p>
-                                </div>
-                                <!-- Divider-->
-                                <hr class="my-4" />
-                                <!-- Post preview-->
-                                <div class="post-preview">
-                                    <a href="post.html">
-                                        <h2 class="post-title">Failure is not an option</h2>
-                                        <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-                                    </a>
-                                    <p class="post-meta">
-                                        Posted by
-                                        <a href="#!">Start Bootstrap</a>
-                                        on July 8, 2023
-                                    </p>
-                                </div>
-                                <!-- Divider-->
-                                <hr class="my-4" />
-                                <!-- Pager-->
-                                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older FAQ →</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Do you have any social networks or messengers? Can you share them for communication or is it private information?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <h3>What advice can you give to those who are just starting their blog or are planning to do it?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <h3>Why are you blogging in English? Is there a specific reason or is it just optional?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <h3>Was it your own decision to start a blog, or did someone contribute to its beginning?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older FAQ →</a></div>
+                </div>
 @endsection
