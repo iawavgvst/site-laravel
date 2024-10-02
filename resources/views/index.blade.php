@@ -31,7 +31,7 @@
                 <hr class="my-4" />
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="post.html"><h3 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h3></a>
+                    <a href="post.html"><h3 class="post-title">I believe every human has a finite number of heartbeats. I do not intend to waste any of mine.</h3></a>
                     <p class="post-meta">
                         Posted on August 13, 2024
                     </p>

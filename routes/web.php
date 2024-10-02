@@ -28,6 +28,9 @@ Route::get('/about.html', [AboutController::class, '__invoke'])->name('about.ind
 Route::get('/contact.html', [ContactController::class, '__invoke'])->name('contact.index');
 Route::get('/faq.html', [FaqController::class, '__invoke'])->name('faq.index');
 
+Route::get('/index.html/create', [MainController::class, 'create']);
+Route::get('/index.html/delete', [MainController::class, 'delete']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
