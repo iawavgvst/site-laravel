@@ -16,32 +16,51 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="my-5">
+{{--            <div class="col-md-10 col-lg-8 col-xl-7">--}}
+{{--                <div class="my-5">--}}
                     <form action="{{ route('post.update', $post->id) }}" method="post">
                         @csrf
                         @method('patch')
-                        <div class="form-floating">
-                            <input class="form-control" name="title" id="title" type="text" value="{{ $post->title }}"/>
+
+                        <div class="form-group">
                             <label for="title">Title of post</label>
+                            <input class="form-control" name="title" id="title" type="text" value="{{ $post->title }}"
+                                   style="margin-bottom: 15px"/>
                         </div>
-                        <div class="form-floating">
-                            <input class="form-control" name="description" id="description" type="text" value="{{ $post->description }}"/>
+
+                        <div class="form-group">
                             <label for="description">Description of post</label>
+                            <input class="form-control" name="description" id="description" type="text"
+                                   value="{{ $post->description }}" style="margin-bottom: 15px"/>
                         </div>
-                        <div class="form-floating">
-                            <textarea class="form-control" name="content" id="content"
-                                      style="height: 10rem">{{ $post->content }}</textarea>
+
+                        <div class="form-group">
                             <label for="content">Content of post</label>
+                            <textarea class="form-control" name="content" id="content"
+                                      style="height: 10rem; margin-bottom: 15px">{{ $post->content }}</textarea>
                             <div class="invalid-feedback">A content is required.
                             </div>
                         </div>
-                        <div class="form-floating">
-                            <input class="form-control" name="image" id="image" type="text" value="{{ $post->image }}" style="margin-bottom: 50px"/>
+
+                        <div class="form-group">
                             <label for="image">Image</label>
+                            <input class="form-control" name="image" id="image" type="text" value="{{ $post->image }}"
+                                   style="margin-bottom: 15px"/>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 35px">
+                            <label for="category">Category</label>
+                            <select class="form-control" id="category" name="category_id">
+                                @foreach($categories as $category)
+                                    <option
+                                            {{ $category->id === $post->category->id ? ' selected' : '' }}
+
+                                            value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!-- Submit Button-->
-                        <div>
+                        <div style="margin-bottom: 45px">
                             <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Update
                             </button>
                         </div>
