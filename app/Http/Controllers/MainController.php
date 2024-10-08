@@ -9,38 +9,60 @@ class MainController extends Controller
 {
     public function __invoke()
     {
-        return view('index');
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 
     public function create()
     {
-        $postArr = [
-            [
-                'title' => 'I believe every human has a finite number of heartbeats. I do not intend to waste any of mine.',
-                'description' => '',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!',
-                'image' => '',
-                'posted_on' => 'Posted on August 13, 2024',
-                'is_published' => 1,
-            ],
-            [
-                'title' => 'Science has not yet mastered prophecy.',
-                'description' => 'We predict too much for the next year and yet far too little for the next ten.',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!',
-                'image' => '',
-                'posted_on' => 'Posted on July 3, 2024',
-                'is_published' => 1,
-            ],
-    ];
-
-        foreach ($postArr as $item) {
-            Post::create($item);
-        }
-        dd('created');
+        return view('post.create');
     }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'title' => 'string',
+            'description' => 'string',
+            'content' => 'string',
+            'image' => 'string',
+        ]);
+
+        Post::create($data);
+        return redirect()->route('post.index');
+    }
+
+    public function show(Post $post)
+    {
+        return view('post.show', compact('post'));
+    }
+
+    public function edit(Post $post)
+    {
+        return view('post.edit', compact('post'));
+    }
+
+    public function update(Post $post)
+    {
+        $data = request()->validate([
+            'title' => 'string',
+            'description' => 'string',
+            'content' => 'string',
+            'image' => 'string',
+        ]);
+
+        $post->update($data);
+        return redirect()->route('post.show', $post->id);
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('post.index');
+    }
+
     public function delete()
     {
-    $post = Post::find(2);
+    $post = Post::find(3);
     $post->delete();
     dd('deleted');
     }
