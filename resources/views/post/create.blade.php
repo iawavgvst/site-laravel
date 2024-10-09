@@ -23,32 +23,49 @@
 
                 <div class="form-group">
                     <label for="title">Title of post</label>
-                    <input class="form-control" name="title" id="title" type="text" placeholder="Title" style="margin-bottom: 15px"/>
+                    <input value="{{ old('title') }}" class="form-control" name="title" id="title" type="text" placeholder="Title" style="margin-bottom: 15px"/>
+                    @error('title')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description of post</label>
-                    <input class="form-control" name="description" id="description"
+                    <input value="{{ old('description') }}" class="form-control" name="description" id="description"
                            placeholder="Description" style="margin-bottom: 15px"/>
                 </div>
 
                 <div class="form-group">
                     <label for="content">Content of post</label>
                     <textarea class="form-control" name="content" id="content"
-                              style="height: 10rem; margin-bottom: 15px" placeholder="Content"></textarea>
+                              style="height: 10rem; margin-bottom: 15px" placeholder="Content">{{ old('content') }}</textarea>
+                    @error('content')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input class="form-control" name="image" id="image" type="text" style="margin-bottom: 15px"
+                    <input value="{{ old('image') }}" class="form-control" name="image" id="image" type="text" style="margin-bottom: 15px"
                            placeholder="Image"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="posted_on">Date</label>
+                    <input value="{{ old('posted_on') }}" class="form-control" name="posted_on" id="posted_on" type="text" style="margin-bottom: 15px"
+                           placeholder="Date"/>
+                    @error('posted_on')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group" style="margin-bottom: 35px">
                     <label for="category">Category</label>
                     <select class="form-control" id="category" name="category_id">
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                            <option
+                                {{ old('category_id') == $category->id ? ' selected' : '' }}
+                                value="{{ $category->id }}">{{ $category->title }}</option>
                         @endforeach
                     </select>
                 </div>

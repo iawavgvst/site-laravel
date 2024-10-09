@@ -48,6 +48,12 @@
                                    style="margin-bottom: 15px"/>
                         </div>
 
+                        <div class="form-group">
+                            <label for="posted_on">Date</label>
+                            <input class="form-control" name="posted_on" id="posted_on" type="text" value="{{ $post->posted_on }}"
+                                   style="margin-bottom: 15px"/>
+                        </div>
+
                         <div class="form-group" style="margin-bottom: 35px">
                             <label for="category">Category</label>
                             <select class="form-control" id="category" name="category_id">

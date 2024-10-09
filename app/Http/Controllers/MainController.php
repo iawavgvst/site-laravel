@@ -27,6 +27,7 @@ class MainController extends Controller
             'description' => 'string',
             'content' => 'string',
             'image' => 'string',
+            'posted_on' => 'string',
             'category_id' => '',
         ]);
         Post::create($data);
@@ -51,6 +52,7 @@ class MainController extends Controller
             'description' => 'string',
             'content' => 'string',
             'image' => 'string',
+            'posted_on' => 'string',
             'category_id' => '',
         ]);
 
