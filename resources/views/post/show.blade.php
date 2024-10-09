@@ -9,7 +9,7 @@
                 <div class="post-heading">
                     <h1>{{ $post->title }}</h1>
                     <h2 class="subheading">{{ $post->description }}</h2>
-                    <span class="meta">Posted on August 13, 2024</span>
+                    <span class="meta">Posted on {{ $post->posted_on }}</span>
                 </div>
             </div>
         </div>

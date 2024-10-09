@@ -2,12 +2,13 @@
 
 @section('content')
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/background.jpg')">
+    <header class="masthead" style="background-image: url('../assets/img/background.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
                         <h1>Meanings Blog</h1>
+                        <h2 class="subheading">It is hard to find words when there really is something to say. But I will try.</h2>
                     </div>
                 </div>
             </div>
@@ -37,7 +38,7 @@
                         <h4 class="post-subtitle">{{ $post->description }}</h4>
                         </a>
                         <p class="post-meta">
-                            Posted on August 13, 2024
+                            Posted on {{ $post->posted_on }}
                         </p>
                     @endforeach
                 </div>
@@ -48,7 +49,7 @@
                     <a href="post.html">
                         <h3 class="post-title">Science has not yet mastered prophecy</h3>
                         <h4 class="post-subtitle">We predict too much for the next year and yet far too little for the
-                            next ten.</h4>
+                            next ten</h4>
                     </a>
                     <p class="post-meta">
                         Posted on July 3, 2024
