@@ -20,16 +20,6 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <!-- Post preview-->
                 <div class="post-preview">
-                    <a href="post.html">
-                        <h3 class="post-title">Man must explore, and this is exploration at its greatest</h3>
-                        <h4 class="post-subtitle">Problems look mighty small from 150 miles up</h4>
-                    </a>
-                    <p class="post-meta">
-                        Posted on September 18, 2024
-                    </p>
-                </div>
-                <!-- Post preview-->
-                <div class="post-preview">
                     @foreach($posts as $post)
                         <a href="{{ route('post.show', $post->id) }}">
                         <h3 class="post-title">{{ $post->title }}</h3>

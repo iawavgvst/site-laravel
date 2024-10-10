@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\Post\AdminController;
+use App\Http\Controllers\Admin\Post\MainController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\Post\CreateController;
 use App\Http\Controllers\Post\DestroyController;
 use App\Http\Controllers\Post\EditController;
@@ -37,23 +38,26 @@ Route::group(['namespace' => 'Post'], function () {
     Route::delete('/index.html/{post}', [DestroyController::class, '__invoke'])->name('post.delete');
 });
 
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+    Route::group(['namespace' => 'Post'], function () {
+        Route::get('/post', [MainController::class, '__invoke'])->name('admin.post.index');
+    });
+});
+
 Route::get('/post.html', [PostController::class, '__invoke'])->name('sample-post.index');
 Route::get('/about.html', [AboutController::class, '__invoke'])->name('about.index');
 Route::get('/contact.html', [ContactController::class, '__invoke'])->name('contact.index');
 Route::get('/faq.html', [FaqController::class, '__invoke'])->name('faq.index');
 
-Route::get('/index.html/delete', [MainController::class, 'delete']);
+Route::get('/index.html/delete', [IndexController::class, 'delete']);
 
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
-    Route::group(['namespace' => 'Post'], function () {
-        Route::get('/posts', [PostController::class, '__invoke'])->name('admin.post.index');
-    });
-});
+Route::get('/admin', [AdminController::class, '__invoke'])->name('admin');
 
-// это для подключения админ панели, вписала с самого начала для того, чтобы была заготовка
+
 
 
