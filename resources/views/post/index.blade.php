@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('../assets/img/background.jpg')">
+    <header class="masthead" style="background-image: url( {{ asset('assets/img/background.jpg') }} )">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -31,8 +31,10 @@
                     @endforeach
                 </div>
                 <!-- Pager-->
+                @can('view', auth()->user())
                 <div class="d-inline-block justify-content mb-4"><a class="btn btn-primary text-uppercase"
-                                                                    href="{{ route('post.create') }}">Creation</a></div>
+                                                                    href="{{ route('admin.post.create') }}">Creation</a></div>
+                @endcan
                 <div class="d-inline-block justify-content float-end mt-2 mb-4">{{ $posts->links() }}</div>
         </div>
     </div>

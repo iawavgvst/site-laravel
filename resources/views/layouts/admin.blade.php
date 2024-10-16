@@ -44,6 +44,9 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{ route('admin') }}" class="nav-link">Home</a>
             </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('post.index') }}" class="nav-link">Site</a>
+            </li>
         </ul>
 
         <!-- Right navbar links -->
