@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('../assets/img/second-post.jpg')">
+<header class="masthead" style="background-image: url( {{ asset('assets/img/second-post.jpg') }} )">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -24,6 +24,8 @@
                 <p>{{ $post->content }}</p>
                 <p>{{ $post->content }}</p>
                 <h2 class="section-heading">The most certain way to succeed is always to try just one more time</h2>
+                <a href="#!"><img class="img-fluid" src="{{ asset('assets/img/post.jpg') }}" style="margin-top: 15px" alt="..."/></a>
+                <span class="caption text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
                 <p>{{ $post->content }}</p>
                 <p>{{ $post->content }}</p>
                 <p>{{ $post->content }}</p>
@@ -31,10 +33,11 @@
                 <!-- Pager-->
                 <div class="d-inline-block justify-content mb-4"><a class="btn btn-primary text-uppercase"
                                                                     href="{{ route('post.index') }}">← Back</a></div>
+                @can('view', auth()->user())
                 <div class="d-inline-block justify-content mb-4 mg"><a class="btn btn-primary text-uppercase"
-                                                                    href="{{ route('post.edit', $post->id) }}">Edition</a></div>
+                                                                    href="{{ route('admin.post.edit', $post->id) }}">Edition</a></div>
                     <div class="d-inline-block justify-content mb-4 float-end">
-                        <form action="{{ route('post.delete', $post->id) }}"
+                        <form action="{{ route('admin.post.delete', $post->id) }}"
                               method="post">
                             @csrf
                             @method('delete')
@@ -44,6 +47,7 @@
                                     Deletion
                                 </button>
                             </div>
+                            @endcan
                         </form>
                     </div>
                 </div>

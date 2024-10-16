@@ -9,6 +9,8 @@ class AdminController extends Controller
 {
     public function __invoke()
     {
+        $this->authorize('view', auth()->user());
+
         $posts = Post::paginate(4);
         return view('admin', compact('posts'));
     }

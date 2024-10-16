@@ -16,7 +16,7 @@
         </div>
         <!-- Pager-->
         <div class="d-inline-block justify-content mb-4"><a class="btn btn-primary text-uppercase"
-                                                            href="{{ route('post.create') }}">Creation</a></div>
+                                                            href="{{ route('admin.post.create') }}">Creation</a></div>
         <div class="d-inline-block justify-content float-end mt-2 mb-4">{{ $posts->links() }}</div>
     </div>
 @endsection
