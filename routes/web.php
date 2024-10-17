@@ -7,6 +7,13 @@ use App\Http\Controllers\Admin\Post\DestroyController;
 use App\Http\Controllers\Admin\Post\EditController;
 use App\Http\Controllers\Admin\Post\MainController;
 use App\Http\Controllers\Admin\Post\UpdateController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\Admin\User\UserCreateController;
+use App\Http\Controllers\Admin\User\UserDestroyController;
+use App\Http\Controllers\Admin\User\UserEditController;
+use App\Http\Controllers\Admin\User\UserShowController;
+use App\Http\Controllers\Admin\User\UserStoreController;
+use App\Http\Controllers\Admin\User\UserUpdateController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -43,6 +50,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
         Route::get('/post/{post}/edit', [EditController::class, '__invoke'])->name('admin.post.edit');
         Route::patch('/post/{post}', [UpdateController::class, '__invoke'])->name('admin.post.update');
         Route::delete('/post/{post}', [DestroyController::class, '__invoke'])->name('admin.post.delete');
+    });
+    Route::group(['namespace' => 'User'], function () {
+        Route::get('/user', [UserController::class, '__invoke'])->name('admin.user.index');
+        Route::get('/user/create', [UserCreateController::class, '__invoke'])->name('admin.user.create');
+        Route::post('/user', [UserStoreController::class, '__invoke'])->name('admin.user.store');
+        Route::get('/user/{user}', [UserShowController::class, '__invoke'])->name('admin.user.show');
+        Route::get('/user/{user}/edit', [UserEditController::class, '__invoke'])->name('admin.user.edit');
+        Route::patch('/user/{user}', [UserUpdateController::class, '__invoke'])->name('admin.user.update');
+        Route::delete('/user/{user}', [UserDestroyController::class, '__invoke'])->name('admin.user.delete');
     });
 });
 
