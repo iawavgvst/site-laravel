@@ -112,12 +112,21 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
+                        <a href="{{ route('admin.user.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Users
+                            </p>
+                            <span class="badge badge-info right"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('admin.post.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Posts
                             </p>
-                            <span class="badge badge-info right">{{ $posts->total() }}</span>
+                            <span class="badge badge-info right"></span>
                         </a>
                     </li>
                 </ul>
@@ -138,8 +147,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item active"><a href="{{ route('admin') }}">Home</a></li>
                             <li class="breadcrumb-item active"><a href="{{ route('admin.post.index') }}">Posts</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ route('admin.user.index') }}">Users</a></li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
