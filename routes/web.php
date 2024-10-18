@@ -1,6 +1,13 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Category\CategoryCreateController;
+use App\Http\Controllers\Admin\Category\CategoryDestroyController;
+use App\Http\Controllers\Admin\Category\CategoryEditController;
+use App\Http\Controllers\Admin\Category\CategoryShowController;
+use App\Http\Controllers\Admin\Category\CategoryStoreController;
+use App\Http\Controllers\Admin\Category\CategoryUpdateController;
 use App\Http\Controllers\Admin\Post\AdminController;
 use App\Http\Controllers\Admin\Post\CreateController;
 use App\Http\Controllers\Admin\Post\DestroyController;
@@ -20,7 +27,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Post\IndexController;
 use App\Http\Controllers\Post\ShowController;
 use App\Http\Controllers\Post\StoreController;
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +57,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
         Route::patch('/post/{post}', [UpdateController::class, '__invoke'])->name('admin.post.update');
         Route::delete('/post/{post}', [DestroyController::class, '__invoke'])->name('admin.post.delete');
     });
+
     Route::group(['namespace' => 'User'], function () {
         Route::get('/user', [UserController::class, '__invoke'])->name('admin.user.index');
         Route::get('/user/create', [UserCreateController::class, '__invoke'])->name('admin.user.create');
@@ -59,6 +66,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
         Route::get('/user/{user}/edit', [UserEditController::class, '__invoke'])->name('admin.user.edit');
         Route::patch('/user/{user}', [UserUpdateController::class, '__invoke'])->name('admin.user.update');
         Route::delete('/user/{user}', [UserDestroyController::class, '__invoke'])->name('admin.user.delete');
+    });
+
+        Route::group(['namespace' => 'Category'], function () {
+            Route::get('/category', [CategoryController::class, '__invoke'])->name('admin.category.index');
+            Route::get('/category/create', [CategoryCreateController::class, '__invoke'])->name('admin.category.create');
+            Route::post('/category', [CategoryStoreController::class, '__invoke'])->name('admin.category.store');
+            Route::get('/category/{category}', [CategoryShowController::class, '__invoke'])->name('admin.category.show');
+            Route::get('/category/{category}/edit', [CategoryEditController::class, '__invoke'])->name('admin.category.edit');
+            Route::patch('/category/{category}', [CategoryUpdateController::class, '__invoke'])->name('admin.category.update');
+            Route::delete('/category/{category}', [CategoryDestroyController::class, '__invoke'])->name('admin.category.delete');
     });
 });
 
