@@ -3,7 +3,7 @@
         <li class="nav-header">ADMIN PANEL</li>
         <li class="nav-item">
             <a href="{{ route('admin.user.index') }}" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
+                <i class="nav-icon fas fa-sharp fa-solid fa-users"></i>
                 <p>
                     Users
                 </p>
@@ -14,6 +14,15 @@
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                     Posts
+                </p>
+                <span class="badge badge-info right"></span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.category.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-solid fa-pencil-alt"></i>
+                <p>
+                    Categories
                 </p>
                 <span class="badge badge-info right"></span>
             </a>
